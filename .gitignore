@@ -63,5 +63,5 @@ typings/
 .idea
 .DS_Store
 
-/integrationTests/images/test/
-/integrationTests/images/diff/
+/integrationTests/images/test_images/
+/integrationTests/images/diff_images/

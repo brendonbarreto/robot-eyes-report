@@ -1,0 +1,32 @@
+version: '3'
+services:
+  web:
+    tty: true
+    build: ../
+    ports:
+      - "80:80"
+  test:
+    tty: true
+    image: mercos/robot-eyes:3.1.2
+    entrypoint: ['robot-eyes', 'test', 'test.js', '--base-url=http://web:80']
+    working_dir: /data
+    volumes:
+      - ./:/data
+    depends_on:
+      - web
+  report:
+    tty: true
+    image: mercos/robot-eyes:3.1.2
+    working_dir: /data
+    volumes:
+      - ./:/data
+    ports:
+      - 3000:3000
+    entrypoint: ['robot-eyes', 'report']
+  approve:
+    tty: true
+    image: mercos/robot-eyes:3.1.2
+    working_dir: /data
+    volumes:
+      - ./:/data
+    entrypoint: ['robot-eyes', 'approve']
