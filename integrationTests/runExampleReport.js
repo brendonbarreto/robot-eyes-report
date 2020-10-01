@@ -3,19 +3,36 @@ const { resolve } = require('path')
 
 runServer([
   {
-    name: 'visualize_indexx',
+    name: 'vertical',
     viewports: [
       {
         name: '1920x1080',
-        diffImage: resolve('./exampleImages/diff/visualize_index/visualize_index1920x1080.png'),
-        referenceImage: resolve('./exampleImages/reference/visualize_index/visualize_index1920x1080.png'),
-        testImage: resolve('./exampleImages/test/visualize_index/visualize_index1920x1080.png')
+        diffImage: resolve('./integrationTests/exampleImages/1920x1080/vertical_diff.png'),
+        referenceImage: resolve('./integrationTests/exampleImages/1920x1080/vertical_reference.png'),
+        testImage: resolve('./integrationTests/exampleImages/1920x1080/vertical_test.png')
       },
       {
         name: '1366x768',
-        diffImage: resolve('./exampleImages/diff/visualize_index/visualize_index1366x768.png'),
-        referenceImage: resolve('./exampleImages/reference/visualize_index/visualize_index1366x768.png'),
-        testImage: resolve('./exampleImages/test/visualize_index/visualize_index1366x768.png')
+        diffImage: resolve('./integrationTests/exampleImages/1366x768/vertical_diff.png'),
+        referenceImage: resolve('./integrationTests/exampleImages/1366x768/vertical_reference.png'),
+        testImage: resolve('./integrationTests/exampleImages/1366x768/vertical_test.png')
+      }
+    ]
+  },
+  {
+    name: 'horizontal',
+    viewports: [
+      {
+        name: '1920x1080',
+        diffImage: resolve('./integrationTests/exampleImages/1920x1080/horizontal_diff.png'),
+        referenceImage: resolve('./integrationTests/exampleImages/1920x1080/horizontal_reference.png'),
+        testImage: resolve('./integrationTests/exampleImages/1920x1080/horizontal_test.png')
+      },
+      {
+        name: '1366x768',
+        diffImage: resolve('./integrationTests/exampleImages/1366x768/horizontal_diff.png'),
+        referenceImage: resolve('./integrationTests/exampleImages/1366x768/horizontal_reference.png'),
+        testImage: resolve('./integrationTests/exampleImages/1366x768/horizontal_test.png')
       }
     ]
   }

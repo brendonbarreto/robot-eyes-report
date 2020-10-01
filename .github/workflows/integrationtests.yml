@@ -11,6 +11,8 @@ jobs:
     steps:
     - uses: actions/checkout@v1
 
+    - name: Go to integration tests folder
+      run: cd integrationTests
     - name: Build
       run: docker-compose build
     - name: Test
