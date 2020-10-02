@@ -15,6 +15,7 @@ describe('robot-eyes-report', function () {
       onReady: async page => {
         await page.click('#vertical .display-button:nth-child(1)')
         await page.click('#horizontal .display-button:nth-child(1)')
+        await page.waitFor(100)
       }
     })
   })
@@ -24,6 +25,7 @@ describe('robot-eyes-report', function () {
       onReady: async page => {
         await page.click('#vertical .display-button:nth-child(2)')
         await page.click('#horizontal .display-button:nth-child(2)')
+        await page.waitFor(100)
       }
     })
   })
@@ -33,6 +35,7 @@ describe('robot-eyes-report', function () {
       onReady: async page => {
         await page.click('#vertical .display-button:nth-child(3)')
         await page.click('#horizontal .display-button:nth-child(3)')
+        await page.waitFor(100)
       }
     })
   })
@@ -42,6 +45,7 @@ describe('robot-eyes-report', function () {
       onReady: async page => {
         await page.click('#vertical .display-button:nth-child(4)')
         await page.click('#horizontal .display-button:nth-child(4)')
+        await page.waitFor(100)
       }
     })
   })
@@ -51,6 +55,7 @@ describe('robot-eyes-report', function () {
       onReady: async page => {
         await page.click('#vertical .viewport-buttons span:nth-child(2)')
         await page.click('#horizontal .viewport-buttons span:nth-child(2)')
+        await page.waitFor(100)
       }
     })
   })
@@ -62,6 +67,7 @@ describe('robot-eyes-report', function () {
         await page.click('.button.is-success')
         await page.click('.button.is-success')
         await page.click('.button.is-success')
+        await page.waitFor(100)
       }
     })
   })
