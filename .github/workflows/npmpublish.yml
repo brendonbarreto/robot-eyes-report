@@ -1,0 +1,30 @@
+name: Publish Node.js Package
+
+on:
+  release:
+    types: [published]
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v1
+      - uses: actions/setup-node@v1
+        with:
+          node-version: 10.18.1
+          registry-url: https://registry.npmjs.org/
+      - name: Define tag
+        run: echo ::set-env name=TAG::`git describe --tags`
+      - name: Bump package version
+        run: |
+          git config --global user.email ${{ secrets.PUBLISH_EMAIL }}
+          git config --global user.name ${{ secrets.PUBLISH_USER_NAME }}
+          npm version ${TAG}
+      - name: Push new version to Github
+        uses: ad-m/github-push-action@master
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+      - name: Publish package to NPM
+        run: npm publish
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
