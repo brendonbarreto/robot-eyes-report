@@ -11,6 +11,7 @@ module.exports = {
       jsx: true
     },
     ecmaVersion: 11,
+    requireConfigFile: false,
     sourceType: 'module'
   },
   plugins: [
@@ -18,7 +19,7 @@ module.exports = {
   ],
   rules: {
   },
-  parser: 'babel-eslint',
+  parser: '@babel/eslint-parser',
   settings: {
     react: {
       version: 'detect'
