@@ -1,9 +1,11 @@
-FROM node:alpine
+FROM node:16.13-alpine
+RUN apk add --no-cache python3 py3-pip make g++
 
 WORKDIR /usr/app
 
 COPY ./package.json ./
 COPY ./package-lock.json ./
+RUN npm install -g npm@latest
 RUN npm install
 COPY ./ ./
 RUN npm run build
