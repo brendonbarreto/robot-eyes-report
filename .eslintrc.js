@@ -4,14 +4,14 @@ module.exports = {
     es2020: true
   },
   extends: [
-    'plugin:react/recommended',
-    'standard'
+    'plugin:react/recommended'
   ],
   parserOptions: {
     ecmaFeatures: {
       jsx: true
     },
     ecmaVersion: 11,
+    requireConfigFile: false,
     sourceType: 'module'
   },
   plugins: [
@@ -19,7 +19,7 @@ module.exports = {
   ],
   rules: {
   },
-  parser: 'babel-eslint',
+  parser: '@babel/eslint-parser',
   settings: {
     react: {
       version: 'detect'
