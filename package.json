@@ -19,7 +19,7 @@
   },
   "homepage": "https://github.com/brendonbarreto/robot-eyes-report#readme",
   "dependencies": {
-    "axios": "^0.20.0",
+    "axios": "^0.21.2",
     "chalk": "^2.4.2",
     "express": "^4.17.1",
     "prop-types": "^15.7.2",
