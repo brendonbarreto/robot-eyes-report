@@ -8,10 +8,15 @@ jobs:
 
     steps:
     - uses: actions/checkout@v1
-      
+    - uses: actions/upload-artifact@v2
+      with:
+        name: images
+        path: ./integrationTests/images/
+
     - name: Build
       run: docker-compose build
       working-directory: ./integrationTests
+
     - name: Test
       run: docker-compose run test
       working-directory: ./integrationTests
