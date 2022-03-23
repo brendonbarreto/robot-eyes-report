@@ -11,7 +11,5 @@ jobs:
       
     - name: Build
       run: docker-compose build
-      working-directory: ./integrationTests
     - name: Test
       run: docker-compose run test
-      working-directory: ./integrationTests

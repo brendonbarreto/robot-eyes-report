@@ -2,7 +2,7 @@ version: '3'
 services:
   web:
     tty: true
-    build: ../
+    build: .
     ports:
       - "80:80"
   test:
@@ -11,7 +11,7 @@ services:
     entrypoint: ['robot-eyes', 'test', 'test.js', '--base-url=http://web:80']
     working_dir: /data
     volumes:
-      - ./:/data
+      - ./integrationTests:/data
     depends_on:
       - web
   report:
@@ -19,7 +19,7 @@ services:
     image: mercos/robot-eyes:3.1.2
     working_dir: /data
     volumes:
-      - ./:/data
+      - ./integrationTests:/data
     ports:
       - 3000:3000
     entrypoint: ['robot-eyes', 'report']
@@ -28,5 +28,5 @@ services:
     image: mercos/robot-eyes:3.1.2
     working_dir: /data
     volumes:
-      - ./:/data
+      - ./integrationTests:/data
     entrypoint: ['robot-eyes', 'approve']
